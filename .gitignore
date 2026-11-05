@@ -23,4 +23,6 @@ firebase-applet-config.json
 # Local test & browser automation artifacts
 .playwright-cli/
 DRAFT_firestore.rules
+public/assets/aistudio/
+
 

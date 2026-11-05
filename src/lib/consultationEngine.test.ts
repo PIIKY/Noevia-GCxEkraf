@@ -902,12 +902,12 @@ test('Security Hardening Phase 4A: GitHub Secret & Database Credential Hygiene (
   assert.ok(gitignore.includes('*.pem'));
   assert.ok(gitignore.includes('*.key'));
 
-  // 2. .env.example must only contain placeholders, never real AIza keys
-  assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(envExample), false);
+  // 2. .env.example must only contain placeholders, never real AIza or AQ. keys
+  assert.equal(/(AIza|AQ\.)[0-9A-Za-z._-]{20,}/.test(envExample), false);
   assert.ok(envExample.includes('GEMINI_API_KEY="MY_GEMINI_API_KEY"'));
 
   // 3. firebase-applet-config.example.json must only contain placeholders
-  assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(fbExample), false);
+  assert.equal(/(AIza|AQ\.)[0-9A-Za-z._-]{20,}/.test(fbExample), false);
   assert.ok(fbExample.includes('YOUR_FIREBASE_PROJECT_ID'));
 });
 
