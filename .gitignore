@@ -24,5 +24,7 @@ firebase-applet-config.json
 .playwright-cli/
 DRAFT_firestore.rules
 public/assets/aistudio/
+.aistudio/
+
 
 
