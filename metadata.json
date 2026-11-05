@@ -1,0 +1,6 @@
+{
+  "name": "Noevia — AI Business Consultant",
+  "description": "Platform konsultasi bisnis berbasis AI Agent untuk calon pelaku UMKM dan pemilik usaha dengan analisis masalah, referensi Knowledge Base, dan 7-Day Action Plan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

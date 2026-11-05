@@ -1,0 +1,193 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-app: #FAFAF8;
+    --bg-surface: #FFFFFF;
+    --bg-surface-secondary: #F4F4F1;
+    --text-primary: #181818;
+    --text-secondary: #666666;
+    --border-subtle: #E7E7E4;
+    --accent-bg: #181818;
+    --accent-text: #FAFAF8;
+    --accent-hover: #2E2E2E;
+    --font-sans: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html.dark {
+    --bg-app: #17191C;
+    --bg-surface: #202328;
+    --bg-surface-secondary: #262A30;
+    --text-primary: #F1F1EE;
+    --text-secondary: #B4B8BF;
+    --border-subtle: #343941;
+    --accent-bg: #F1F1EE;
+    --accent-text: #17191C;
+    --accent-hover: #DCDCD6;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    font-size: 16px;
+    line-height: 1.6;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    transition: background-color 220ms var(--ease-smooth), color 220ms var(--ease-smooth);
+  }
+
+  h1, h2, h3, h4 {
+    text-wrap: balance;
+  }
+
+  button, a, input, textarea, select {
+    transition-property: background-color, border-color, color, opacity, transform, box-shadow;
+    transition-duration: 180ms;
+    transition-timing-function: var(--ease-smooth);
+  }
+
+  button:active:not(:disabled) {
+    transform: scale(0.985);
+  }
+}
+
+.font-mono-meta {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Theme semantic utilities */
+.bg-app {
+  background-color: var(--bg-app);
+  transition: background-color 220ms var(--ease-smooth);
+}
+
+.bg-surface {
+  background-color: var(--bg-surface);
+  transition: background-color 220ms var(--ease-smooth), border-color 220ms var(--ease-smooth), transform 220ms var(--ease-smooth), box-shadow 220ms var(--ease-smooth);
+}
+
+.bg-surface-secondary {
+  background-color: var(--bg-surface-secondary);
+  transition: background-color 220ms var(--ease-smooth), border-color 220ms var(--ease-smooth), transform 220ms var(--ease-smooth);
+}
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.border-subtle {
+  border-color: var(--border-subtle);
+}
+
+.btn-primary {
+  background-color: var(--accent-bg);
+  color: var(--accent-text);
+  transition: background-color 180ms var(--ease-smooth), color 180ms var(--ease-smooth), transform 180ms var(--ease-smooth), box-shadow 180ms var(--ease-smooth);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.985);
+}
+
+/* Subtle keyframes for comfortable UI motion */
+@keyframes fadeUpSubtle {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSubtle {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleInSubtle {
+  from {
+    opacity: 0;
+    transform: scale(0.985) translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUpSubtle 280ms var(--ease-smooth) both;
+}
+
+.animate-fade-in {
+  animation: fadeInSubtle 220ms var(--ease-smooth) both;
+}
+
+.animate-scale-in {
+  animation: scaleInSubtle 250ms var(--ease-smooth) both;
+}
+
+.animate-message-in {
+  animation: messageSlideIn 240ms var(--ease-smooth) both;
+}
+
+.anim-delay-1 {
+  animation-delay: 50ms;
+}
+
+.anim-delay-2 {
+  animation-delay: 100ms;
+}
+
+.anim-delay-3 {
+  animation-delay: 150ms;
+}
+
+.hover-lift {
+  transition: transform 200ms var(--ease-smooth), border-color 200ms var(--ease-smooth), background-color 200ms var(--ease-smooth), box-shadow 200ms var(--ease-smooth);
+}
+
+.hover-lift:hover {
+  transform: translateY(-1.5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,1536 @@
+NOEVIA
+Your Business, Understood.
+
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+
+Information	Description
+Product Name	Noevia
+Product Category	AI Business Consultant
+Project Type	AI Agent / Interactive Web Application
+Program	Google Career Certificates × EKRAF
+Final Project Track	Topik 3 — AI Agent / Chatbot
+Target Users	Calon pelaku UMKM dan pemilik UMKM
+Primary Language	Bahasa Indonesia
+AI Provider	Google Gemini API
+Development Approach	Vibe Coding
+Project Scope	Functional MVP
+01. PRODUCT OVERVIEW
+1.1 What is Noevia?
+
+Noevia adalah platform konsultasi bisnis berbasis AI Agent yang membantu calon pelaku UMKM dan pemilik usaha memahami serta menyelesaikan berbagai permasalahan bisnis.
+
+Noevia berperan sebagai konsultan bisnis digital yang dapat diajak berdiskusi secara interaktif.
+
+Pengguna dapat menceritakan permasalahan, tantangan, ide, atau rencana bisnis menggunakan bahasa sehari-hari tanpa harus memahami istilah bisnis yang kompleks.
+
+AI Agent akan memandu pengguna melalui proses konsultasi yang terstruktur:
+
+Memahami kondisi dan permasalahan pengguna.
+Menggali informasi tambahan melalui pertanyaan lanjutan.
+Mengidentifikasi kemungkinan penyebab permasalahan.
+Mengakses Knowledge Base yang relevan.
+Menyusun analisis dan rekomendasi.
+Memberikan langkah penyelesaian yang praktis.
+Membantu pengguna mengevaluasi atau mengembangkan solusi melalui konsultasi lanjutan.
+
+Noevia bukan sekadar chatbot yang menjawab pertanyaan. Produk ini dirancang sebagai AI Business Consultant yang mampu memahami konteks pengguna dan memandu proses penyelesaian masalah.
+
+Core Philosophy
+
+"Don't just answer business questions. Understand the problem, find the direction, and help users take the next step."
+
+1.2 Problem Statement
+
+Banyak calon pelaku UMKM dan pemilik usaha menghadapi kesulitan dalam memahami serta menyelesaikan permasalahan bisnis mereka.
+
+Beberapa permasalahan yang umum terjadi:
+
+Tidak mengetahui penyebab penjualan mengalami penurunan.
+Kesulitan menentukan strategi pemasaran yang tepat.
+Bingung menentukan harga jual dan menghitung biaya produksi.
+Kesulitan memahami kebutuhan target pelanggan.
+Mengalami kendala dalam pengelolaan operasional.
+Tidak mengetahui langkah yang harus dilakukan ketika menghadapi masalah bisnis.
+Memiliki ide bisnis tetapi belum mengetahui bagaimana mengembangkannya.
+
+Konsultasi bisnis profesional juga tidak selalu mudah dijangkau oleh usaha kecil karena keterbatasan biaya dan akses.
+
+Noevia hadir sebagai pendamping konsultasi bisnis berbasis AI yang dapat diakses kapan saja.
+
+1.3 Proposed Solution
+
+Noevia menyediakan satu platform konsultasi interaktif dengan pendekatan problem-solving.
+
+Pengguna menceritakan masalahnya, kemudian AI Agent melakukan konsultasi bertahap untuk mendapatkan informasi yang dibutuhkan.
+
+AI tidak langsung memberikan rekomendasi sebelum memahami konteks permasalahan.
+
+Setelah informasi mencukupi, AI menggunakan Knowledge Base sebagai referensi untuk menyusun analisis, rekomendasi, dan action plan.
+
+1.4 Product Objectives
+
+Tujuan utama Noevia:
+
+Membantu pengguna memahami permasalahan bisnisnya.
+Mempermudah pengguna menemukan kemungkinan penyebab masalah.
+Memberikan rekomendasi berdasarkan konteks bisnis pengguna.
+Mengintegrasikan Knowledge Base sebagai sumber pengetahuan AI.
+Membantu pengguna menyusun langkah penyelesaian yang realistis.
+Menyediakan pengalaman konsultasi yang interaktif dan berkelanjutan.
+02. TARGET USERS
+2.1 Primary Users
+A. Aspiring Entrepreneurs
+
+Orang yang ingin memulai usaha tetapi masih membutuhkan arahan.
+
+Kebutuhan:
+
+Mengembangkan ide bisnis.
+Memahami peluang dan target pelanggan.
+Mengetahui kebutuhan awal bisnis.
+Menyusun langkah memulai usaha.
+B. Existing UMKM Owners
+
+Pemilik usaha kecil yang sedang menjalankan bisnis dan membutuhkan bantuan untuk menghadapi permasalahan.
+
+Kebutuhan:
+
+Menganalisis masalah operasional.
+Memperbaiki pemasaran.
+Memahami pengelolaan biaya.
+Meningkatkan kepuasan pelanggan.
+Mengembangkan bisnis.
+2.2 Target Business Categories
+
+Noevia harus dapat membantu berbagai kategori usaha, antara lain:
+
+Food & Beverage.
+Fashion.
+Beauty & Personal Care.
+Creative Services.
+Retail & Online Shop.
+Handicraft.
+Home Business.
+Digital Services.
+
+AI harus menyesuaikan rekomendasi dengan kategori dan kondisi usaha pengguna.
+
+03. CORE USER EXPERIENCE
+3.1 Main User Journey
+
+Noevia menggunakan pendekatan conversational consultation.
+
+Pengguna tidak dipaksa mengisi formulir bisnis yang panjang. Informasi dikumpulkan secara bertahap melalui percakapan dengan AI Agent.
+
+Alur utama:
+
+LANDING PAGE
+↓
+START YOUR CONSULTATION
+↓
+TELL US YOUR BUSINESS CHALLENGE
+↓
+AI DISCOVERY CONVERSATION
+↓
+BUSINESS UNDERSTANDING
+↓
+PROBLEM ANALYSIS
+↓
+KNOWLEDGE-BASED RECOMMENDATION
+↓
+ACTION PLAN
+↓
+CONTINUE CONSULTATION
+
+Setiap tahap harus terhubung dengan percakapan sebelumnya.
+
+04. DETAILED USER FLOW
+STEP 01 — Landing Page
+
+Tujuan:
+Memperkenalkan Noevia dan mengajak pengguna memulai konsultasi.
+
+Main Headline
+
+"Every Business Has Challenges.
+Let's Find Your Way Forward."
+
+Supporting Text
+
+"Running a business isn't always easy. Tell us what's happening, and let Noevia help you understand the problem and find your next move."
+
+Primary CTA
+
+START YOUR CONSULTATION →
+
+Secondary Information
+
+Tampilkan tiga penjelasan singkat:
+
+Understand
+Tell us about your business and the challenges you're facing.
+
+Discover
+Explore possible causes with the help of AI.
+
+Take Action
+Get practical recommendations and a clear action plan.
+
+Design Requirements
+Hero section harus menjadi fokus utama.
+Jangan memenuhi landing page dengan banyak informasi.
+Gunakan typography yang kuat.
+Berikan whitespace yang cukup.
+CTA harus mudah ditemukan.
+Hindari ilustrasi AI generik dan dekorasi berlebihan.
+STEP 02 — Start Your Consultation
+
+Setelah pengguna menekan tombol Start Your Consultation, aplikasi mengarahkan pengguna ke halaman awal konsultasi.
+
+Tampilkan pertanyaan:
+
+"Let's Start With Your Business."
+
+"What would you like to work on today?"
+
+Pengguna dapat memilih salah satu kategori:
+
+Category	Description
+Starting a Business	Saya ingin memulai usaha
+Marketing	Saya mengalami masalah pemasaran
+Finance & Pricing	Saya membutuhkan bantuan mengenai biaya dan harga
+Operations	Saya mengalami masalah operasional
+Customer Experience	Saya ingin meningkatkan pengalaman pelanggan
+Business Growth	Saya ingin mengembangkan bisnis
+Other Challenges	Saya memiliki permasalahan lainnya
+
+Kategori hanya berfungsi sebagai panduan awal.
+
+Pengguna tetap dapat menceritakan masalahnya sendiri tanpa harus memilih kategori tertentu.
+
+Business Context
+
+Sediakan informasi tambahan yang bersifat opsional:
+
+Business Name.
+Business Category.
+Business Stage (Planning / Starting / Already Operating).
+Business Description.
+
+Jangan meminta terlalu banyak informasi sebelum pengguna mulai berkonsultasi.
+
+STEP 03 — Tell Us Your Challenge
+
+Ini merupakan awal interaksi utama dengan AI.
+
+Tampilkan:
+
+"What's Happening With Your Business?"
+
+"Tell us what's on your mind. You don't need to explain everything perfectly. We'll figure it out together."
+
+Sediakan text area yang cukup luas.
+
+Contoh placeholder:
+
+"Misalnya, saya punya usaha bakery kecil. Penjualan mulai menurun selama dua bulan terakhir dan saya belum tahu apa penyebabnya..."
+
+Contoh lain:
+
+"Saya ingin memulai usaha minuman, tetapi masih bingung menentukan target pelanggan dan strategi awal."
+
+Pengguna dapat menulis dengan bahasa sehari-hari.
+
+Sediakan tombol:
+
+CONTINUE →
+
+Setelah pengguna mengirimkan permasalahannya, sistem menyimpan informasi tersebut sebagai konteks awal konsultasi.
+
+STEP 04 — AI Discovery Conversation
+
+Ini merupakan fitur inti Noevia.
+
+Setelah menerima informasi awal, AI Agent memulai percakapan konsultasi.
+
+AI harus menggali informasi yang relevan sebelum menyimpulkan permasalahan.
+
+Example Conversation
+
+User:
+
+"Saya mempunyai usaha bakery kecil. Belakangan ini penjualan saya menurun."
+
+AI Agent:
+
+"Saya mengerti. Penurunan penjualan bisa dipengaruhi beberapa faktor. Supaya saya bisa membantu lebih tepat, boleh saya tahu apakah jumlah pelanggan baru yang berkurang atau pelanggan lama yang jarang melakukan pembelian kembali?"
+
+User:
+
+"Sepertinya pelanggan baru yang berkurang. Selama ini saya hanya mengandalkan Instagram."
+
+AI Agent:
+
+"Baik, berarti kita perlu melihat bagaimana bisnis Anda menjangkau calon pelanggan baru. Selama ini apakah Anda menggunakan iklan berbayar, bekerja sama dengan kreator lokal, atau hanya mengandalkan postingan organik?"
+
+User:
+
+"Saya hanya posting foto produk dan sesekali membuat promo."
+
+AI Agent:
+
+"Baik. Saya sudah mendapatkan gambaran awal. Saya ingin memastikan satu hal lagi: apakah Anda sudah menentukan siapa target pelanggan utama bakery Anda?"
+
+Percakapan harus berlangsung secara natural.
+
+Discovery Information
+
+AI dapat menggali informasi berikut sesuai kebutuhan:
+
+Business Category.
+Business Stage.
+Main Business Challenge.
+Business Goals.
+Target Audience.
+Current Strategy.
+Available Resources.
+Budget Constraints.
+Previous Actions.
+Expected Outcomes.
+
+Tidak semua informasi wajib ditanyakan.
+
+Conversational Rules
+Satu pesan sebaiknya berisi satu pertanyaan utama.
+Jangan menanyakan seluruh informasi sekaligus.
+Pertanyaan lanjutan harus berhubungan dengan jawaban sebelumnya.
+Jangan mengulang pertanyaan yang sudah dijawab.
+Jika informasi sudah cukup, hentikan proses penggalian.
+Apabila jawaban ambigu, minta klarifikasi.
+Gunakan bahasa Indonesia yang natural dan profesional.
+Jangan terlalu formal atau menggunakan istilah teknis tanpa penjelasan.
+
+AI harus mengutamakan kualitas informasi, bukan panjang percakapan.
+
+STEP 05 — Business Understanding
+
+Setelah AI memperoleh informasi yang cukup, sistem menampilkan ringkasan pemahaman.
+
+Judul:
+
+"Let's Make Sure We're on the Same Page."
+
+Contoh:
+
+BUSINESS OVERVIEW
+Information	Result
+Business Type	Bakery
+Business Stage	Already Operating
+Main Challenge	Declining New Customer Acquisition
+Current Marketing	Instagram Organic Content
+Target Market	Not Clearly Defined
+Business Goal	Increase New Customer Acquisition
+PROBLEM SUMMARY
+
+"Your bakery is experiencing a decline in new customer acquisition. Current marketing activities primarily rely on organic Instagram content, with limited variation in promotional channels."
+
+Pengguna dapat:
+
+Confirm Understanding.
+Edit Information.
+Continue Consultation.
+
+Penting: ringkasan harus membedakan informasi yang benar-benar disampaikan pengguna dari kesimpulan sementara AI.
+
+Jangan menampilkan informasi yang tidak pernah diberikan seolah-olah merupakan fakta.
+
+STEP 06 — Business Analysis & Diagnosis
+
+Setelah pengguna mengonfirmasi pemahamannya, AI melanjutkan proses analisis.
+
+Output:
+
+A. Main Problem
+
+Identifikasi permasalahan utama.
+
+Contoh:
+
+Kesulitan menjangkau pelanggan baru melalui strategi pemasaran yang digunakan saat ini.
+
+B. Supporting Findings
+
+Informasi yang mendukung analisis.
+
+Contoh:
+
+Promosi berfokus pada satu saluran.
+Konten masih didominasi foto produk.
+Target pelanggan belum didefinisikan secara spesifik.
+C. Possible Causes
+
+Beberapa faktor yang berpotensi menyebabkan permasalahan.
+
+Contoh:
+
+Strategi akuisisi pelanggan belum bervariasi.
+Konten belum memiliki pendekatan yang berbeda untuk setiap target audiens.
+Belum ada evaluasi efektivitas aktivitas pemasaran.
+D. Additional Considerations
+
+Informasi yang masih perlu diperiksa.
+
+Contoh:
+
+Data interaksi Instagram.
+Jumlah pelanggan baru.
+Produk yang paling diminati.
+Respons pelanggan terhadap promosi.
+
+AI tidak boleh mengklaim sebuah kemungkinan sebagai penyebab yang sudah terbukti.
+
+Gunakan bahasa seperti:
+
+"Kemungkinan penyebab."
+"Indikasi awal."
+"Perlu diperiksa lebih lanjut."
+STEP 07 — Knowledge-Based Consultation
+
+Setelah memahami masalah, AI harus mengakses Knowledge Base yang relevan.
+
+Contoh:
+
+Masalah: Penurunan pelanggan baru.
+
+Knowledge Base yang relevan:
+
+Marketing Fundamentals.
+Customer Acquisition.
+Target Market Identification.
+Digital Marketing for UMKM.
+
+AI menggunakan referensi tersebut untuk memperkuat analisis dan rekomendasi.
+
+Setiap jawaban yang menggunakan Knowledge Base harus mencantumkan referensi sumber.
+
+Format referensi:
+
+Source: Marketing Fundamentals — Section 03.
+
+Jika tersedia, tampilkan judul dokumen dan halaman atau bagian yang relevan.
+
+Jika tidak menemukan referensi yang sesuai, AI harus menyatakan keterbatasan tersebut. Jangan mengarang nama dokumen, sumber, atau kutipan.
+
+STEP 08 — Solution Recommendation
+
+Judul:
+
+"Here's a Way Forward."
+
+AI menghasilkan rekomendasi yang disesuaikan dengan masalah dan kondisi pengguna.
+
+Setiap rekomendasi harus memiliki:
+
+Recommendation Title.
+Description.
+Why It Matters.
+Implementation Steps.
+Expected Outcome.
+Required Resources.
+Priority.
+
+Contoh:
+
+Recommendation 01 — Define Your Target Audience
+
+Description:
+
+Tentukan kelompok pelanggan yang ingin dijangkau agar aktivitas pemasaran lebih terarah.
+
+Implementation:
+
+Identifikasi kelompok pelanggan yang pernah membeli.
+Catat karakteristik dan kebutuhan mereka.
+Tentukan satu atau dua segmen prioritas.
+Sesuaikan pendekatan konten dengan segmen tersebut.
+
+Expected Outcome:
+
+Aktivitas pemasaran memiliki target yang lebih jelas.
+
+Recommendation 02 — Diversify Your Content Strategy
+
+Description:
+
+Jangan hanya mengandalkan foto produk. Buat variasi konten yang memperkenalkan produk, proses pembuatan, keunggulan, dan pengalaman pelanggan.
+
+Implementation:
+
+Identifikasi produk unggulan.
+Buat beberapa tema konten.
+Siapkan jadwal publikasi.
+Evaluasi respons setiap konten.
+
+AI tidak boleh menjamin bahwa rekomendasi tertentu pasti meningkatkan penjualan.
+
+STEP 09 — Action Plan
+
+Rekomendasi selanjutnya disusun menjadi rencana tindakan.
+
+Contoh:
+
+YOUR 7-DAY ACTION PLAN
+Day	Action	Objective
+Day 1	Identify target customers	Memahami calon pelanggan
+Day 2	Review existing content	Mengevaluasi pemasaran
+Day 3	Prepare new content concepts	Membuat variasi konten
+Day 4	Publish new content	Menguji pendekatan baru
+Day 5	Reach local communities	Menjangkau calon pelanggan
+Day 6	Review audience response	Mengukur respons
+Day 7	Evaluate results	Menentukan langkah berikutnya
+
+Action plan harus realistis dan menyesuaikan kemampuan serta sumber daya pengguna.
+
+Jangan membuat jadwal yang membutuhkan biaya atau sumber daya yang tidak dimiliki pengguna.
+
+STEP 10 — Continue Your Consultation
+
+Setelah hasil analisis dan rekomendasi ditampilkan, pengguna dapat melanjutkan konsultasi.
+
+Judul:
+
+"Your Business Journey Doesn't Stop Here."
+
+Pertanyaan:
+
+"What would you like to explore next?"
+
+Pilihan:
+
+Explore Another Solution.
+Adjust My Strategy.
+I Have Another Business Problem.
+Build a More Detailed Action Plan.
+Ask Noevia Anything.
+
+Pengguna juga dapat langsung mengetik pertanyaan melalui continuation chat.
+
+Contoh:
+
+User:
+
+"Saya tidak mempunyai budget untuk iklan. Apakah ada alternatif lain?"
+
+AI harus memahami:
+
+Permasalahan awal.
+Strategi yang sudah dibahas.
+Budget pengguna.
+Rekomendasi sebelumnya.
+
+AI memberikan alternatif solusi yang mempertimbangkan konteks tersebut.
+
+Important
+
+Jangan membuat pengguna mengulang konsultasi dari awal ketika ingin mengembangkan rekomendasi.
+
+Konteks percakapan harus tetap tersedia dalam sesi yang sama.
+
+Jika pengguna mengubah strategi, AI harus dapat memperbarui action plan sebelumnya.
+
+05. AI AGENT REQUIREMENTS
+5.1 Agent Identity
+
+AI harus memiliki identitas sebagai:
+
+"Noevia — Your AI Business Consultant."
+
+Peran AI adalah membantu pengguna memahami dan menyelesaikan permasalahan bisnis melalui konsultasi interaktif berbasis Knowledge Base.
+
+AI bukan konsultan bersertifikat dan tidak boleh mengklaim memiliki pengalaman profesional yang tidak dimilikinya.
+
+5.2 Core Agent Capabilities
+Capability	Description
+Problem Understanding	Memahami keluhan dan kebutuhan pengguna
+Context Awareness	Mengingat informasi dari percakapan sebelumnya
+Dynamic Discovery	Menentukan pertanyaan lanjutan yang relevan
+Knowledge Retrieval	Mencari referensi dari Knowledge Base
+Business Analysis	Menyusun analisis permasalahan
+Solution Recommendation	Memberikan rekomendasi praktis
+Action Planning	Membuat langkah implementasi
+Continuous Consultation	Melanjutkan konsultasi dengan konteks yang sama
+5.3 Agent Workflow
+
+Gunakan alur internal berikut:
+
+Receive User Input.
+Understand Current Context.
+Identify Business Problem.
+Determine Missing Information.
+Ask Follow-up Questions if Necessary.
+Retrieve Relevant Knowledge.
+Analyze the Problem.
+Generate Recommendations.
+Create Action Plan.
+Maintain Conversation Context.
+
+AI tidak harus menampilkan proses internal ini kepada pengguna.
+
+Pengguna cukup melihat pertanyaan, analisis, sumber referensi, dan rekomendasi yang relevan.
+
+5.4 Master System Instruction
+
+Gunakan instruksi berikut sebagai dasar identitas agent.
+
+"You are Noevia, an AI Business Consultant designed to help aspiring entrepreneurs and small business owners understand and solve their business challenges.
+
+Your primary responsibility is not simply to answer questions, but to guide users through a structured problem-solving consultation.
+
+You must:
+
+Understand the user's business situation before giving recommendations.
+Ask relevant follow-up questions when necessary.
+Avoid asking questions that have already been answered.
+Use the provided Knowledge Base as a primary reference.
+Connect recommendations to the user's actual business context.
+Distinguish confirmed information from assumptions and possible causes.
+Provide practical and prioritized recommendations.
+Explain why each recommendation is relevant.
+Create realistic implementation steps based on available resources.
+Maintain conversation context throughout the consultation.
+
+Never invent business data, financial figures, market statistics, or Knowledge Base references.
+
+If the available information is insufficient, explain what is missing and ask for clarification.
+
+If the Knowledge Base does not contain relevant information, be transparent about the limitation.
+
+Use natural, professional, supportive Indonesian.
+
+Avoid generic advice. Every recommendation must connect to the user's specific problem and situation."
+
+06. KNOWLEDGE BASE ARCHITECTURE
+
+Knowledge Base merupakan salah satu persyaratan terpenting dalam project ini.
+
+Noevia harus menggunakan dokumen atau katalog data khusus sebagai referensi AI Agent.
+
+Knowledge Base tidak boleh hanya menjadi formalitas berupa file yang diunggah tetapi tidak digunakan dalam proses konsultasi.
+
+6.1 Required Knowledge Base
+
+Siapkan enam kelompok pengetahuan.
+
+ID	Knowledge Base	Main Content
+KB-01	UMKM Business Fundamentals	Dasar bisnis dan pengembangan usaha
+KB-02	Marketing & Customer Acquisition	Pemasaran dan akuisisi pelanggan
+KB-03	Financial Management & Pricing	HPP, biaya, margin, dan harga jual
+KB-04	Business Operations	Pengelolaan stok dan operasional
+KB-05	Customer Experience & Retention	Pelayanan dan loyalitas pelanggan
+KB-06	Business Development & Validation	Validasi ide dan pengembangan bisnis
+6.2 Knowledge Base Structure
+
+Setiap dokumen sebaiknya memiliki:
+
+Document Title.
+Description.
+Category.
+Source.
+Main Topics.
+Content.
+Section Heading.
+Page Number (if available).
+
+Gunakan dokumen PDF atau CSV yang isinya jelas dan relevan.
+
+Jangan menggunakan dokumen yang hanya berisi istilah umum tanpa penjelasan dan panduan yang bisa diterapkan.
+
+6.3 Retrieval Requirements
+
+Saat pengguna menyampaikan masalah:
+
+Klasifikasikan masalah ke kategori yang sesuai.
+Cari bagian Knowledge Base yang berkaitan.
+Ambil informasi relevan.
+Hubungkan referensi dengan kondisi pengguna.
+Hasilkan rekomendasi.
+Tampilkan referensi sumber kepada pengguna.
+
+Hindari mengambil seluruh dokumen untuk setiap pertanyaan.
+
+Gunakan retrieval berdasarkan relevansi informasi.
+
+Jika memungkinkan, simpan metadata dokumen agar sistem dapat menampilkan nama sumber dan bagian referensinya.
+
+6.4 Knowledge Base Management
+
+Untuk MVP, sediakan pengelolaan Knowledge Base yang sederhana.
+
+Fungsi:
+
+Melihat dokumen yang tersedia.
+Mengunggah dokumen PDF atau CSV.
+Melihat status dokumen.
+Menghapus dokumen.
+Mengetahui kategori dokumen.
+
+Jika pemrosesan dokumen membutuhkan waktu, tampilkan status:
+
+Uploaded.
+Processing.
+Ready.
+Failed.
+
+Jangan menampilkan dokumen sebagai Ready jika belum dapat digunakan dalam retrieval.
+
+07. APPLICATION STRUCTURE
+
+Noevia memiliki lima bagian utama.
+
+7.1 Landing Page
+
+Fungsi:
+Memperkenalkan produk dan memulai konsultasi.
+
+Komponen:
+
+Hero Section.
+Short Product Introduction.
+How It Works.
+Main CTA.
+Footer.
+
+Jaga landing page tetap sederhana. Jangan menambahkan section pemasaran yang tidak diperlukan.
+
+7.2 Consultation Workspace
+
+Fungsi:
+Menjadi tempat utama interaksi pengguna dengan AI.
+
+Komponen:
+
+Conversation Header.
+Consultation Progress.
+Chat History.
+AI Message.
+User Message.
+Message Input.
+Send Button.
+Suggested Prompts.
+
+Progress dapat menampilkan:
+
+Understanding → Analysis → Recommendations → Action Plan.
+
+Jangan menampilkan progress sebagai persentase yang dibuat-buat.
+
+7.3 Consultation Result
+
+Fungsi:
+Menampilkan hasil konsultasi secara terstruktur.
+
+Komponen:
+
+Business Context.
+Problem Summary.
+Possible Causes.
+Supporting Findings.
+Knowledge Base References.
+Recommendations.
+Action Plan.
+
+Hasil harus mudah dibaca dan dapat dibuka kembali.
+
+7.4 My Consultations
+
+Fungsi:
+Menampilkan riwayat konsultasi pengguna.
+
+Informasi:
+
+Consultation Title.
+Business Category.
+Main Problem.
+Date Created.
+Last Updated.
+
+Pengguna dapat membuka kembali konsultasi sebelumnya dan melanjutkan percakapan.
+
+Sediakan empty state jika belum ada riwayat.
+
+7.5 Knowledge Base Management
+
+Fungsi:
+Mengelola sumber pengetahuan agent.
+
+Halaman ini bersifat administratif untuk keperluan pengembangan dan demonstrasi.
+
+Komponen:
+
+Document List.
+Upload Document.
+Document Category.
+Processing Status.
+Delete Document.
+
+Tidak perlu membangun sistem role management kompleks untuk MVP.
+
+08. UI/UX DESIGN SYSTEM
+8.1 Brand Identity
+
+Brand Name: Noevia
+
+Design Direction:
+
+MONOCHROME EDITORIAL MINIMALISM.
+
+Karakter visual:
+
+Minimalist.
+Monochromatic.
+Modern.
+Editorial.
+Refined.
+Professional.
+Calm.
+Intentionally Designed.
+
+Noevia harus terlihat seperti produk digital profesional dengan karakter desain yang kuat.
+
+Jangan menggunakan template dashboard SaaS generik.
+
+8.2 Color Palette
+
+Gunakan palet monokrom hitam dan putih.
+
+Token	Color	Usage
+Primary Black	#111111	Teks utama dan primary button
+Deep Black	#080808	Navigasi atau section gelap
+Pure White	#FFFFFF	Background utama
+Soft White	#F7F7F5	Secondary background
+Light Gray	#EAEAEA	Divider dan surface
+Border Gray	#D8D8D8	Border
+Muted Gray	#777777	Secondary text
+Dark Gray	#555555	Supporting text
+
+Ketentuan:
+
+Gunakan hitam sebagai warna utama untuk typography dan CTA.
+Gunakan putih sebagai background dominan.
+Gunakan abu-abu sebagai elemen sekunder.
+Jangan menggunakan warna cerah sebagai accent utama.
+Hindari gradient ungu, biru, pink, atau warna neon.
+Status dapat dibedakan melalui label, border, dan variasi grayscale.
+8.3 Typography
+
+Rekomendasi font:
+
+Primary Font:
+
+Geist.
+Inter.
+
+Monospace:
+
+IBM Plex Mono.
+Geist Mono.
+
+Penggunaan:
+
+Heading:
+Gunakan ukuran yang cukup besar dengan hierarchy yang kuat.
+
+Body:
+Prioritaskan keterbacaan.
+
+Metadata:
+Gunakan monospace untuk tanggal, label, atau informasi pendukung.
+
+Jangan mencampurkan terlalu banyak font.
+
+8.4 Layout Direction
+
+Gunakan pendekatan editorial layout.
+
+Landing Page
+Full-width hero.
+Large typography.
+Generous whitespace.
+Clear primary CTA.
+Minimal navigation.
+Thin divider lines.
+Consultation Workspace
+
+Rekomendasi layout desktop:
+
+Sidebar kiri:
+
+Noevia Logo.
+New Consultation.
+My Consultations.
+Knowledge & About.
+
+Main content:
+
+Conversation Header.
+Conversation Area.
+Message Composer.
+
+Conversation area harus menjadi fokus utama.
+
+Jangan memenuhi halaman dengan banyak kartu dan statistik.
+
+Consultation Result
+
+Gunakan report-style editorial layout.
+
+Large result heading.
+Clear section hierarchy.
+Structured findings.
+Thin separators.
+Compact source references.
+Readable action plan.
+8.5 Component Styling
+
+Buttons:
+
+Primary: Black background, white text.
+Secondary: White background, black border.
+Minimal hover transition.
+Gunakan bentuk sederhana.
+
+Cards:
+
+Gunakan hanya ketika diperlukan.
+Hindari card untuk setiap informasi.
+Gunakan whitespace dan divider sebagai alternatif.
+Hindari shadow besar.
+
+Input:
+
+Border tipis.
+Label jelas.
+Focus state tegas.
+Placeholder tidak terlalu kontras.
+
+Chat:
+
+User messages dan AI messages harus mudah dibedakan.
+Hindari bubble chat dengan rounded corners berlebihan.
+Gunakan layout yang tenang dan nyaman dibaca.
+Pertahankan jarak yang konsisten antar pesan.
+
+Icons:
+
+Gunakan Lucide Icons dengan warna monokrom.
+
+Hindari emoji sebagai elemen navigasi.
+
+8.6 Visual Elements to Avoid
+
+Jangan menggunakan:
+
+Purple gradients.
+Blue gradients.
+Neon accents.
+Glassmorphism.
+Excessive shadows.
+Excessive rounded corners.
+Generic AI dashboard templates.
+Decorative illustrations yang tidak relevan.
+Terlalu banyak floating components.
+Animated backgrounds.
+Excessive icons.
+Repeated statistic cards.
+
+Design Principle:
+
+"Less decoration. More intention."
+
+8.7 Microinteractions
+
+Gunakan interaksi ringan:
+
+Subtle hover states.
+Button feedback.
+Smooth section transitions.
+Loading indicator ketika AI berpikir.
+Typing indicator.
+Subtle progress transitions.
+Clear success and error feedback.
+
+Jangan menggunakan animasi berat atau transisi yang mengganggu aktivitas konsultasi.
+
+8.8 Responsive Design
+
+Aplikasi harus dapat digunakan pada:
+
+Desktop.
+Laptop.
+Tablet.
+Mobile.
+
+Desktop:
+Gunakan sidebar dan content area yang luas.
+
+Mobile:
+Gunakan navigasi yang lebih sederhana dan conversation area yang nyaman.
+
+Pastikan message composer tidak tertutup keyboard dan seluruh fungsi utama dapat digunakan.
+
+09. TECHNICAL REQUIREMENTS
+9.1 AI Integration
+
+Gunakan Google Gemini API sebagai AI provider.
+
+AI service harus dipisahkan dari UI components.
+
+Jangan menempatkan seluruh prompt dan pemrosesan AI langsung di komponen frontend.
+
+9.2 Suggested Architecture
+
+Frontend:
+
+React / Next.js.
+TypeScript.
+Tailwind CSS.
+
+Backend:
+
+Server-side API routes.
+
+AI:
+
+Google Gemini API.
+
+Database:
+
+Supabase atau database lain yang sesuai dengan lingkungan pengembangan.
+
+Knowledge Base:
+
+PDF / CSV documents.
+Retrieval service.
+Document metadata.
+
+Gunakan stack yang sudah tersedia jika project telah memiliki struktur awal. Jangan mengganti seluruh teknologi tanpa alasan teknis.
+
+9.3 Conversation Memory
+
+Sistem harus mempertahankan konteks percakapan.
+
+Data yang perlu disimpan:
+
+Consultation ID.
+User Messages.
+AI Responses.
+Business Context.
+Identified Problems.
+Previous Recommendations.
+Action Plan.
+Knowledge References.
+
+AI harus dapat merujuk pada pesan sebelumnya dalam konsultasi yang sama.
+
+Jika riwayat sudah terlalu panjang, gunakan ringkasan konteks terstruktur agar informasi penting tetap tersedia tanpa harus mengirim seluruh percakapan setiap kali.
+
+9.4 Structured AI Output
+
+Untuk hasil diagnosis, rekomendasi, dan action plan, gunakan structured JSON.
+
+Contoh schema:
+
+{
+"consultation_summary": {
+"business_name": null,
+"business_category": "Food and Beverage",
+"business_stage": "Operating",
+"main_problem": "Declining new customer acquisition"
+},
+"confirmed_facts": [
+"Business relies mainly on organic Instagram content"
+],
+"missing_information": [
+"Customer acquisition data",
+"Target customer profile"
+],
+"possible_causes": [
+{
+"cause": "Limited marketing channel diversity",
+"confidence": "Possible",
+"explanation": "The current strategy relies mainly on one organic channel."
+}
+],
+"knowledge_references": [
+{
+"document": "Marketing Fundamentals",
+"section": "Customer Acquisition",
+"page": null
+}
+],
+"recommendations": [
+{
+"title": "Define Target Audience",
+"priority": "High",
+"reason": "A clearer audience can improve marketing direction.",
+"steps": [
+"Review previous customer profiles",
+"Identify common customer characteristics",
+"Select a priority customer segment"
+],
+"expected_outcome": "Clearer marketing direction"
+}
+],
+"action_plan": [
+{
+"day": 1,
+"task": "Review existing customer profiles",
+"objective": "Identify potential customer segments"
+}
+]
+}
+
+Schema di atas merupakan ilustrasi format keluaran. Implementasikan validasi sesuai kebutuhan aplikasi.
+
+Jangan menjadikan confidence sebagai angka atau kepastian ilmiah apabila tidak memiliki metode pengukuran yang jelas.
+
+9.5 Error Handling
+
+Jika Gemini API gagal:
+
+Tampilkan pesan error yang mudah dimengerti.
+Pertahankan pesan pengguna.
+Sediakan tombol retry.
+Jangan membuat jawaban palsu sebagai pengganti kegagalan API.
+
+Jika Knowledge Base tidak dapat diakses:
+
+Beri tahu bahwa referensi belum tersedia.
+Jangan mengklaim jawaban berasal dari dokumen.
+Jangan membuat sumber fiktif.
+
+Jika JSON tidak valid:
+
+Validasi output.
+Coba perbaiki melalui mekanisme yang aman.
+Jangan menyimpan hasil tidak valid sebagai diagnosis final.
+9.6 API Security
+Simpan API key di environment variables atau secret manager.
+Jangan mengekspos API key pada frontend.
+Gunakan server-side API.
+Jangan mencatat API key dalam log.
+Batasi data pribadi yang disimpan.
+Jangan mengirimkan informasi sensitif yang tidak diperlukan ke AI.
+10. DATA STRUCTURE
+
+Struktur berikut digunakan sebagai dasar pengelolaan data.
+
+10.1 Consultations
+
+Fields:
+
+id
+user_id (nullable for demo)
+title
+business_name
+business_category
+business_stage
+initial_problem
+consultation_status
+created_at
+updated_at
+10.2 Messages
+
+Fields:
+
+id
+consultation_id
+role
+content
+created_at
+
+Role:
+
+user
+assistant
+10.3 Business Context
+
+Fields:
+
+id
+consultation_id
+business_category
+business_stage
+business_goals
+target_audience
+available_resources
+budget_constraints
+confirmed_facts
+missing_information
+10.4 Consultation Results
+
+Fields:
+
+id
+consultation_id
+problem_summary
+supporting_findings
+possible_causes
+recommendations
+action_plan
+created_at
+updated_at
+10.5 Knowledge Documents
+
+Fields:
+
+id
+document_name
+category
+file_type
+storage_path
+processing_status
+created_at
+updated_at
+10.6 Knowledge References
+
+Fields:
+
+id
+consultation_id
+document_id
+section_name
+page_number
+relevant_content
+
+Data harus dapat dipanggil kembali ketika pengguna membuka riwayat konsultasi.
+
+11. FUNCTIONAL REQUIREMENTS
+ID	Requirement	Priority
+FR-01	Landing page menampilkan identitas Noevia	Must Have
+FR-02	Pengguna dapat memulai konsultasi	Must Have
+FR-03	Pengguna dapat menjelaskan masalah bisnis secara bebas	Must Have
+FR-04	AI dapat memahami konteks bisnis	Must Have
+FR-05	AI dapat mengajukan pertanyaan lanjutan	Must Have
+FR-06	AI dapat menghindari pertanyaan berulang	Must Have
+FR-07	Pengguna dapat mengonfirmasi ringkasan bisnis	Must Have
+FR-08	AI dapat mengakses Knowledge Base	Must Have
+FR-09	AI dapat memberikan referensi Knowledge Base	Must Have
+FR-10	AI dapat membuat analisis awal	Must Have
+FR-11	AI dapat memberikan rekomendasi	Must Have
+FR-12	AI dapat membuat action plan	Must Have
+FR-13	Pengguna dapat melanjutkan konsultasi	Must Have
+FR-14	AI mempertahankan konteks percakapan	Must Have
+FR-15	Sistem menyimpan riwayat konsultasi	Must Have
+FR-16	Admin dapat melihat Knowledge Base	Must Have
+FR-17	Admin dapat mengunggah PDF atau CSV	Should Have
+FR-18	Pengguna dapat mengekspor hasil konsultasi	Could Have
+FR-19	Pengguna dapat memberi feedback terhadap rekomendasi	Could Have
+12. NON-FUNCTIONAL REQUIREMENTS
+Performance
+Halaman harus dapat dimuat dengan cepat.
+Hindari animasi berat.
+Loading indicator harus tersedia selama AI memproses jawaban.
+Jangan membiarkan pengguna menunggu tanpa feedback.
+Reliability
+Data konsultasi tidak boleh hilang setelah refresh.
+Riwayat harus dapat dibuka kembali.
+Kegagalan AI tidak boleh menyebabkan aplikasi crash.
+Output AI harus divalidasi sebelum ditampilkan sebagai laporan final.
+Usability
+User journey harus mudah dipahami.
+Pengguna tidak harus memahami istilah bisnis.
+Pertanyaan AI harus singkat dan relevan.
+Hasil konsultasi harus memiliki struktur yang jelas.
+Responsible AI
+Jangan memberikan jaminan keberhasilan bisnis.
+Jangan membuat angka pasar atau data finansial tanpa sumber.
+Jangan menyajikan dugaan sebagai fakta.
+Jangan mengarang referensi Knowledge Base.
+Jika informasi tidak cukup, tanyakan klarifikasi.
+Jelaskan keterbatasan rekomendasi jika diperlukan.
+13. DEMO SCENARIO
+
+Gunakan studi kasus simulasi:
+
+SweetBite Bakery
+
+Profil:
+
+Business Category: Food & Beverage.
+Business Stage: Already Operating.
+Business Channel: Offline and Instagram.
+Main Challenge: Penurunan pelanggan baru.
+Initial User Input
+
+"Saya mempunyai usaha bakery kecil. Belakangan ini penjualan menurun dan pelanggan baru semakin sedikit. Saya biasanya hanya promosi melalui Instagram, tetapi hasilnya belum terlalu terlihat."
+
+Expected Agent Behavior
+AI memahami masalah penurunan pelanggan baru.
+AI bertanya mengenai strategi pemasaran saat ini.
+AI menggali target pelanggan.
+AI menanyakan sumber daya pemasaran yang tersedia.
+AI merangkum kondisi bisnis.
+Pengguna mengonfirmasi pemahaman.
+AI mencari referensi relevan dari Knowledge Base.
+AI memberikan analisis kemungkinan penyebab.
+AI menyusun rekomendasi.
+AI membuat action plan.
+Pengguna meminta alternatif tanpa biaya iklan.
+AI menyesuaikan rekomendasi menggunakan konteks sebelumnya.
+Demo Objective
+
+Membuktikan bahwa Noevia mampu:
+
+Memahami masalah bisnis.
+Melakukan konsultasi bertahap.
+Memanfaatkan Knowledge Base.
+Menghasilkan rekomendasi yang relevan.
+Mempertahankan konteks.
+Membantu pengguna menentukan tindakan selanjutnya.
+
+Jangan hanya menampilkan chatbot yang bisa menjawab pertanyaan umum.
+
+14. ACCEPTANCE CRITERIA
+
+Noevia dianggap memenuhi MVP apabila:
+
+Website dapat dibuka secara online.
+Landing page berfungsi.
+Pengguna dapat memulai konsultasi.
+Pengguna dapat menjelaskan masalah bisnis.
+Gemini dapat memahami input pengguna.
+AI dapat mengajukan pertanyaan kontekstual.
+AI tidak mengulang pertanyaan yang sudah dijawab.
+Pengguna dapat mengonfirmasi ringkasan konsultasi.
+Knowledge Base khusus telah terintegrasi.
+AI benar-benar mengambil informasi relevan dari Knowledge Base.
+AI menampilkan referensi sumber yang benar.
+AI menghasilkan analisis awal.
+AI memberikan rekomendasi praktis.
+AI menghasilkan action plan.
+Pengguna dapat melanjutkan konsultasi.
+AI mempertahankan konteks sebelumnya.
+Riwayat konsultasi dapat dibuka kembali.
+UI konsisten dengan design system monokrom.
+Website dapat digunakan pada desktop dan mobile.
+Tidak ada tombol utama yang hanya menjadi dekorasi.
+15. OUT OF SCOPE
+
+Fitur berikut tidak termasuk dalam MVP:
+
+Marketplace UMKM.
+Payment Gateway.
+Online Banking Integration.
+Business Accounting System.
+Automated Financial Transactions.
+Predictive Sales Forecasting.
+Real-Time Market Intelligence.
+Automatic Competitor Scraping.
+Multi-Agent Architecture.
+Complex CRM.
+Social Media API Integration.
+Automatic Business Registration.
+Professional Legal or Tax Consultation.
+
+Fitur-fitur tersebut tidak boleh ditambahkan hanya untuk membuat aplikasi terlihat lebih kompleks.
+
+16. DEVELOPMENT PLAN — 4 DAYS
+
+Prioritas utama adalah membangun alur konsultasi yang berfungsi secara menyeluruh.
+
+DAY 1 — Product Foundation & Visual Identity
+
+Target:
+
+Setup project.
+Setup routing.
+Setup design system.
+Implementasi landing page.
+Implementasi consultation workspace.
+Setup struktur data.
+Setup Knowledge Base awal.
+
+Output:
+
+Website memiliki identitas visual Noevia dan struktur aplikasi yang jelas.
+
+DAY 2 — AI Agent & Knowledge Base
+
+Target:
+
+Integrasi Gemini API.
+Setup system instruction.
+Implementasi discovery conversation.
+Implementasi contextual follow-up.
+Integrasi Knowledge Base.
+Implementasi retrieval.
+Implementasi source references.
+
+Output:
+
+AI dapat melakukan konsultasi kontekstual dan menggunakan Knowledge Base.
+
+DAY 3 — Consultation Results & Continuous Chat
+
+Target:
+
+Business Understanding.
+Problem Analysis.
+Solution Recommendation.
+Action Plan Generator.
+Conversation Context.
+Consultation History.
+Save Consultation.
+
+Output:
+
+Pengguna dapat menyelesaikan proses konsultasi dan melanjutkannya tanpa kehilangan konteks.
+
+DAY 4 — Testing & Deployment
+
+Target:
+
+Pengujian skenario konsultasi.
+Pengujian Knowledge Base retrieval.
+Pemeriksaan akurasi referensi.
+Pengujian error handling.
+Pemeriksaan responsive design.
+Perbaikan UI/UX.
+Deployment.
+Simulasi live demo.
+Persiapan deck presentasi.
+
+Output:
+
+Noevia dapat diakses melalui tautan publik dan siap didemokan.
+
+17. INSTRUCTIONS FOR AI CODING AGENT
+
+Bagian ini merupakan instruksi utama untuk AI yang bertanggung jawab membangun Noevia.
+
+17.1 Your Role
+
+Bertindaklah sebagai:
+
+Senior Full-Stack Developer.
+AI Application Engineer.
+Conversational AI Designer.
+Product Designer.
+UI/UX Designer.
+
+Bangun Noevia berdasarkan PRD ini.
+
+Jangan hanya menghasilkan desain statis atau prototype visual.
+
+Produk harus mempunyai interaksi yang berjalan, AI yang terintegrasi, Knowledge Base yang benar-benar digunakan, dan alur konsultasi yang saling terhubung.
+
+17.2 Product Principles
+Ikuti PRD sebagai sumber kebutuhan utama.
+Jangan mengubah identitas dan tujuan utama Noevia.
+Fokus pada AI Business Consultant.
+Prioritaskan kualitas konsultasi dan akurasi jawaban.
+Knowledge Base harus benar-benar digunakan.
+Jangan membuat fitur yang tidak memiliki fungsi jelas.
+Pastikan semua halaman terhubung.
+Pastikan seluruh tombol utama berfungsi.
+Jangan menggunakan jawaban AI palsu sebagai hasil simulasi.
+Jangan mengganti integrasi AI dengan respons hardcoded.
+17.3 Design Instructions
+
+Desain monokrom merupakan persyaratan utama.
+
+Gunakan:
+
+Black and White.
+Editorial Minimalism.
+Strong Typography.
+Clean Layout.
+Thin Borders.
+Generous Whitespace.
+Consistent Spacing.
+Subtle Interactions.
+
+Jangan menggunakan template dashboard AI generik.
+
+Jangan menambahkan gradient warna, glassmorphism, elemen dekoratif yang berlebihan, atau kartu statistik yang tidak relevan.
+
+Utamakan kenyamanan membaca dan pengalaman konsultasi.
+
+17.4 AI Instructions
+Gunakan Gemini API.
+Pisahkan AI service dari frontend components.
+Terapkan system instruction yang konsisten.
+Gunakan structured output untuk hasil analisis.
+Integrasikan Knowledge Base.
+Validasi referensi dokumen.
+Pertahankan konteks percakapan.
+Hindari jawaban generik.
+Jangan mengarang fakta atau data.
+Tangani API failures dengan baik.
+17.5 Development Method
+
+Kerjakan secara bertahap:
+
+Phase 1: Foundation & Design System.
+
+Phase 2: Landing Page & Consultation Workspace.
+
+Phase 3: AI Agent & Knowledge Base Integration.
+
+Phase 4: Business Analysis & Recommendations.
+
+Phase 5: Action Plan & Conversation History.
+
+Phase 6: Testing & Deployment.
+
+Setelah menyelesaikan setiap fase:
+
+Periksa hasil implementasi.
+Uji fungsi.
+Perbaiki error.
+Pastikan fitur sebelumnya tetap berjalan.
+Jangan melanjutkan dengan membawa bug yang belum diselesaikan.
+
+Jika terdapat keterbatasan waktu, prioritaskan fitur Must Have.
+
+Jangan menambahkan fitur baru sebelum alur konsultasi utama selesai.
+
+17.6 Implementation Rules
+Gunakan reusable components.
+Pisahkan presentation dan business logic.
+Buat struktur folder yang mudah dipahami.
+Gunakan type definitions.
+Terapkan validasi input.
+Gunakan loading, empty, success, dan error states.
+Pastikan data tersimpan dengan benar.
+Jangan mengekspos API key.
+Hindari duplikasi kode.
+Jangan merusak struktur project yang sudah berjalan hanya untuk mengganti teknologi.
+
+Jika ada keputusan teknis yang belum ditentukan, pilih solusi paling sederhana, stabil, dan sesuai kebutuhan MVP.
+
+18. FINAL PRODUCT EXPECTATION
+
+Hasil akhir yang diharapkan adalah sebuah web application bernama Noevia.
+
+Noevia harus menjadi platform konsultasi bisnis berbasis AI Agent yang:
+
+Memiliki identitas visual monokrom dan minimalist.
+Memiliki pengalaman konsultasi yang natural.
+Memahami konteks bisnis pengguna.
+Mengajukan pertanyaan lanjutan yang relevan.
+Mengintegrasikan Knowledge Base khusus.
+Memberikan analisis dan rekomendasi yang dapat dipertanggungjawabkan.
+Menghasilkan action plan.
+Mempertahankan konteks konsultasi.
+Menyediakan riwayat konsultasi.
+Dapat digunakan melalui desktop dan mobile.
+Dapat diakses melalui tautan publik.
+FINAL PRODUCT STATEMENT
+
+Noevia — Your Business, Understood.
+
+Noevia is an AI-powered business consultant that helps aspiring entrepreneurs and small business owners understand their challenges, explore possible solutions, and take meaningful steps forward.
+
+Not just answers. Better understanding. Clearer direction. Practical action.

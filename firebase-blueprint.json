@@ -1,0 +1,421 @@
+{
+  "entities": {
+    "UserPublicProfile": {
+      "title": "UserPublicProfile",
+      "description": "Non-PII public profile metadata for an authenticated Noevia user.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name of the user.",
+          "minLength": 1,
+          "maxLength": 120
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the profile was last updated."
+        }
+      },
+      "required": ["uid", "displayName", "createdAt", "updatedAt"]
+    },
+    "UserPrivateInfo": {
+      "title": "UserPrivateInfo",
+      "description": "Strictly isolated PII record for an authenticated Noevia user.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Verified email address of the user.",
+          "minLength": 3,
+          "maxLength": 254
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the private record was created."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when the private record was updated."
+        }
+      },
+      "required": ["uid", "email", "createdAt", "updatedAt"]
+    },
+    "ConsultationRecord": {
+      "title": "ConsultationRecord",
+      "description": "Private business consultation session owned by a single authenticated user.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique consultation identifier.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "Authenticated Firebase UID of the consultation owner.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "title": {
+          "type": "string",
+          "description": "Consultation title.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "businessName": {
+          "type": "string",
+          "description": "User business name.",
+          "minLength": 0,
+          "maxLength": 160
+        },
+        "businessCategory": {
+          "type": "string",
+          "description": "Business category.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "businessStage": {
+          "type": "string",
+          "description": "Current stage of the business.",
+          "enum": ["Planning", "Starting", "Already Operating"]
+        },
+        "workTopic": {
+          "type": "string",
+          "description": "Primary business domain topic.",
+          "enum": [
+            "Starting a Business",
+            "Marketing",
+            "Finance & Pricing",
+            "Operations",
+            "Customer Experience",
+            "Business Growth",
+            "Other Challenges"
+          ]
+        },
+        "initialProblem": {
+          "type": "string",
+          "description": "Initial problem statement described by the user.",
+          "minLength": 0,
+          "maxLength": 4000
+        },
+        "consultationStatus": {
+          "type": "string",
+          "description": "Lifecycle status of the consultation.",
+          "enum": [
+            "Discovery",
+            "Understanding Review",
+            "Analyzed & Active",
+            "Completed"
+          ]
+        },
+        "currentStep": {
+          "type": "string",
+          "description": "Current step identifier in the consultation flow.",
+          "minLength": 1,
+          "maxLength": 64
+        },
+        "businessContextMap": {
+          "type": "object",
+          "description": "Structured business context map."
+        },
+        "analysisSummaryMap": {
+          "type": "object",
+          "description": "Structured diagnosis, recommendations, action plan, and monitoring state."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of creation."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of last update."
+        }
+      },
+      "required": [
+        "id",
+        "ownerId",
+        "title",
+        "businessName",
+        "businessCategory",
+        "businessStage",
+        "workTopic",
+        "initialProblem",
+        "consultationStatus",
+        "currentStep",
+        "businessContextMap",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "ConsultationMessage": {
+      "title": "ConsultationMessage",
+      "description": "Individual message inside a user's private consultation subcollection.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique message identifier.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "consultationId": {
+          "type": "string",
+          "description": "Parent consultation ID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "Authenticated UID of the conversation owner.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "role": {
+          "type": "string",
+          "description": "Sender role.",
+          "enum": ["user", "assistant"]
+        },
+        "content": {
+          "type": "string",
+          "description": "Message text content.",
+          "minLength": 1,
+          "maxLength": 15000
+        },
+        "phase": {
+          "type": "string",
+          "description": "Conversation phase.",
+          "enum": ["discovery", "continuation"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when message was recorded."
+        }
+      },
+      "required": [
+        "id",
+        "consultationId",
+        "ownerId",
+        "role",
+        "content",
+        "phase",
+        "createdAt"
+      ]
+    },
+    "GeneratedDocumentRecord": {
+      "title": "GeneratedDocumentRecord",
+      "description": "Private metadata record of a generated PDF, XLSX, or DOCX business deliverable.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique generated document ID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "consultationId": {
+          "type": "string",
+          "description": "Parent consultation ID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "ownerId": {
+          "type": "string",
+          "description": "Authenticated UID of the document owner.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "kind": {
+          "type": "string",
+          "description": "Deliverable kind.",
+          "enum": ["consultation-report", "action-plan", "tailored-document"]
+        },
+        "title": {
+          "type": "string",
+          "description": "Deliverable title.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "fileName": {
+          "type": "string",
+          "description": "Downloaded file name.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "format": {
+          "type": "string",
+          "description": "Document file format.",
+          "enum": ["PDF", "CSV", "XLSX", "DOCX"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when generated."
+        }
+      },
+      "required": [
+        "id",
+        "consultationId",
+        "ownerId",
+        "kind",
+        "title",
+        "fileName",
+        "format",
+        "createdAt"
+      ]
+    },
+    "KnowledgeDocumentRecord": {
+      "title": "KnowledgeDocumentRecord",
+      "description": "Shared curated Knowledge Base document managed only by administrators.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Knowledge Base document ID (e.g., KB-01).",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "documentName": {
+          "type": "string",
+          "description": "Title of the Knowledge Base document.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "description": {
+          "type": "string",
+          "description": "Summary of the document.",
+          "minLength": 1,
+          "maxLength": 1000
+        },
+        "category": {
+          "type": "string",
+          "description": "Primary business domain category.",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "source": {
+          "type": "string",
+          "description": "Curated source attribution.",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "fileType": {
+          "type": "string",
+          "description": "Document file format.",
+          "enum": ["PDF", "CSV"]
+        },
+        "processingStatus": {
+          "type": "string",
+          "description": "Indexing status.",
+          "enum": ["Uploaded", "Processing", "Ready", "Failed"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of creation."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of update."
+        }
+      },
+      "required": [
+        "id",
+        "documentName",
+        "description",
+        "category",
+        "source",
+        "fileType",
+        "processingStatus",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AdminRecord": {
+      "title": "AdminRecord",
+      "description": "Trusted administrator lookup document.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Administrator UID.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when granted."
+        }
+      },
+      "required": ["uid", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}/public/{docId}": {
+      "schema": { "$ref": "#/entities/UserPublicProfile" },
+      "description": "Public non-PII user profile documents."
+    },
+    "/users/{userId}/private/{docId}": {
+      "schema": { "$ref": "#/entities/UserPrivateInfo" },
+      "description": "Strictly isolated private user PII documents."
+    },
+    "/consultations/{consultationId}": {
+      "schema": { "$ref": "#/entities/ConsultationRecord" },
+      "description": "Private user consultation records isolated by ownerId."
+    },
+    "/consultations/{consultationId}/messages/{messageId}": {
+      "schema": { "$ref": "#/entities/ConsultationMessage" },
+      "description": "Subcollection of messages belonging to a private consultation."
+    },
+    "/consultations/{consultationId}/documents/{documentId}": {
+      "schema": { "$ref": "#/entities/GeneratedDocumentRecord" },
+      "description": "Subcollection of private generated deliverable metadata for a consultation."
+    },
+    "/knowledge_base/{docId}": {
+      "schema": { "$ref": "#/entities/KnowledgeDocumentRecord" },
+      "description": "Shared Knowledge Base catalog (read-only for users, writable only by verified admins)."
+    },
+    "/admins/{adminUid}": {
+      "schema": { "$ref": "#/entities/AdminRecord" },
+      "description": "Administrator registry."
+    }
+  }
+}
