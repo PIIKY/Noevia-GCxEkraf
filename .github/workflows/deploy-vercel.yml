@@ -1,0 +1,73 @@
+name: Deploy Noevia to Vercel
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+  VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+  VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+  VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+  VITE_FIREBASE_FIRESTORE_DATABASE_ID: ${{ secrets.VITE_FIREBASE_FIRESTORE_DATABASE_ID }}
+  VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+  VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
+
+jobs:
+  verify-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: 2. Setup Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: 3. Install Dependencies
+        run: npm install
+
+      - name: 4. Prepare Firebase Config from GitHub Secrets
+        run: node scripts/ensure-firebase-config.mjs
+
+      - name: 5. Run TypeScript Check & Security Test Suite
+        run: |
+          npm run lint
+          npx tsx --test src/lib/consultationEngine.test.ts
+
+      - name: 6. Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: 7. Pull Vercel Project Settings
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ] || [ "${{ github.ref }}" == "refs/heads/master" ]; then
+            vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+          else
+            vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+          fi
+
+      - name: 8. Build & Deploy to Vercel
+        if: ${{ secrets.VERCEL_TOKEN != '' }}
+        id: vercel_deploy
+        run: |
+          if [ "${{ github.ref }}" == "refs/heads/main" ] || [ "${{ github.ref }}" == "refs/heads/master" ]; then
+            DEPLOY_URL=$(vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN }})
+          else
+            DEPLOY_URL=$(vercel deploy --yes --token=${{ secrets.VERCEL_TOKEN }})
+          fi
+          echo "url=$DEPLOY_URL" >> $GITHUB_OUTPUT
+          echo "### 🚀 Noevia berhasil di-deploy ke Vercel!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Link Website Publik:** [$DEPLOY_URL]($DEPLOY_URL)" >> $GITHUB_STEP_SUMMARY

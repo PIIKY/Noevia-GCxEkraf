@@ -20,17 +20,36 @@ import {
   where,
 } from 'firebase/firestore';
 import firebaseConfig from '../../firebase-applet-config.json';
+import { getFirestore } from 'firebase/firestore';
 import { Consultation, GeneratedDocumentMeta, Message } from '../types';
 import { isValidEntityId } from './multiUserIsolation';
 
-const app = initializeApp(firebaseConfig);
+const envMeta = (
+  import.meta as unknown as { env?: Record<string, string | undefined> }
+).env;
+
+const resolvedFirebaseConfig = {
+  ...firebaseConfig,
+  projectId: envMeta?.VITE_FIREBASE_PROJECT_ID || firebaseConfig.projectId,
+  appId: envMeta?.VITE_FIREBASE_APP_ID || firebaseConfig.appId,
+  apiKey: envMeta?.VITE_FIREBASE_API_KEY || firebaseConfig.apiKey,
+  authDomain: envMeta?.VITE_FIREBASE_AUTH_DOMAIN || firebaseConfig.authDomain,
+  firestoreDatabaseId:
+    envMeta?.VITE_FIREBASE_FIRESTORE_DATABASE_ID ||
+    firebaseConfig.firestoreDatabaseId,
+  storageBucket:
+    envMeta?.VITE_FIREBASE_STORAGE_BUCKET || firebaseConfig.storageBucket,
+  messagingSenderId:
+    envMeta?.VITE_FIREBASE_MESSAGING_SENDER_ID ||
+    firebaseConfig.messagingSenderId,
+};
+
+const app = initializeApp(resolvedFirebaseConfig);
 export const db = getFirestoreInstance();
 export const auth = getAuth(app);
 
-import { getFirestore } from 'firebase/firestore';
-
 function getFirestoreInstance() {
-  return getFirestore(app, firebaseConfig.firestoreDatabaseId);
+  return getFirestore(app, resolvedFirebaseConfig.firestoreDatabaseId);
 }
 
 const knownCreatedDocPaths = new Set<string>();

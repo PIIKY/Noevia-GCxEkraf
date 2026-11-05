@@ -4,5 +4,23 @@ dist/
 coverage/
 .DS_Store
 *.log
-.env*
+
+# Environment variables & API keys (never commit to GitHub)
+.env
+.env.*
 !.env.example
+
+# Firebase & Database credentials/configurations (never commit to GitHub)
+firebase-applet-config.json
+!firebase-applet-config.example.json
+*firebase-adminsdk*.json
+*service-account*.json
+*credentials*.json
+*.pem
+*.key
+*.p12
+
+# Local test & browser automation artifacts
+.playwright-cli/
+DRAFT_firestore.rules
+

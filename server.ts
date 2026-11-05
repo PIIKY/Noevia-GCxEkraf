@@ -211,9 +211,13 @@ export function createApp() {
 
     // Never allow wildcard CORS with credentials
     const origin = req.headers.origin;
+    const configuredAppUrl = process.env.APP_URL?.trim();
     if (
       origin &&
-      (origin.includes('localhost:3000') || origin.endsWith('.run.app'))
+      (origin.includes('localhost:3000') ||
+        origin.endsWith('.run.app') ||
+        origin.endsWith('.vercel.app') ||
+        (configuredAppUrl && origin === configuredAppUrl))
     ) {
       res.setHeader('Access-Control-Allow-Origin', origin);
       res.setHeader('Vary', 'Origin');

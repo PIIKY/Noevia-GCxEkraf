@@ -882,4 +882,34 @@ test('Backend API Security & Multi-User Isolation (HTTP Integration): Enforces o
   }
 });
 
+import fs from 'node:fs';
+import path from 'node:path';
+
+test('Security Hardening Phase 4A: GitHub Secret & Database Credential Hygiene (.gitignore, .env.example, firebase-applet-config.example.json)', () => {
+  const rootDir = path.resolve(process.cwd());
+  const gitignore = fs.readFileSync(path.join(rootDir, '.gitignore'), 'utf8');
+  const envExample = fs.readFileSync(path.join(rootDir, '.env.example'), 'utf8');
+  const fbExample = fs.readFileSync(
+    path.join(rootDir, 'firebase-applet-config.example.json'),
+    'utf8'
+  );
+
+  // 1. .gitignore must exclude .env files, firebase-applet-config.json, service accounts, and private keys
+  assert.ok(gitignore.includes('.env'));
+  assert.ok(gitignore.includes('firebase-applet-config.json'));
+  assert.ok(gitignore.includes('*firebase-adminsdk*.json'));
+  assert.ok(gitignore.includes('*service-account*.json'));
+  assert.ok(gitignore.includes('*.pem'));
+  assert.ok(gitignore.includes('*.key'));
+
+  // 2. .env.example must only contain placeholders, never real AIza keys
+  assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(envExample), false);
+  assert.ok(envExample.includes('GEMINI_API_KEY="MY_GEMINI_API_KEY"'));
+
+  // 3. firebase-applet-config.example.json must only contain placeholders
+  assert.equal(/AIza[0-9A-Za-z_-]{20,}/.test(fbExample), false);
+  assert.ok(fbExample.includes('YOUR_FIREBASE_PROJECT_ID'));
+});
+
+
 
